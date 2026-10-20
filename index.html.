@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An independent fan-made educational website about Elon Musk, his career and technology projects.">
+  <title>Elon Musk | Fan & Technology Profile</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #111a2b;
+      --text: #f4f7ff;
+      --muted: #aab6cc;
+      --accent: #69a8ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #263148;
+    }
+
+    .logo { font-size: 20px; font-weight: bold; }
+
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    a { color: var(--accent); text-decoration: none; }
+    nav a { color: var(--text); font-size: 14px; }
+    a:hover { text-decoration: underline; }
+
+    .notice {
+      background: #19243a;
+      color: #dce7ff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: 90px 7%;
+      text-align: center;
+      background: radial-gradient(ellipse at top, #20365c, var(--bg) 70%);
+    }
+
+    .tag {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 { font-size: clamp(36px, 8vw, 64px); line-height: 1.15; }
+    h2 { font-size: 30px; }
+
+    .hero p, .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: #07101f;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section { padding: 60px 7%; }
+    .section-intro { margin: 0 0 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #263148;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h3 { margin-top: 0; }
+    .card p { color: var(--muted); }
+
+    .timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 22px;
+      margin-left: 6px;
+    }
+
+    footer {
+      border-top: 1px solid #263148;
+      padding: 26px 7%;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 16px 5%; }
+      nav { gap: 12px; }
+      .hero { padding: 65px 6%; }
+      section { padding: 44px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="notice">
+    Independent fan website — not affiliated with or endorsed by Elon Musk.
+  </div>
+
+  <header>
+    <div class="logo">EM / TECH</div>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="tag">People • Innovation • Technology</div>
+      <h1>Exploring the world of Elon Musk</h1>
+      <p>
+        An independent educational profile exploring the career,
+        businesses and technology projects associated with Elon Musk.
+      </p>
+      <a class="button" href="#projects">Explore the projects</a>
+    </section>
+
+    <section id="about">
+      <h2>About Elon Musk</h2>
+      <p class="section-intro">
+        Elon Musk is an entrepreneur associated with electric vehicles,
+        space exploration, artificial intelligence and other technologies.
+        This fan-made website is an introduction for curious readers.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Areas of technology</h2>
+      <p class="section-intro">
+        Explore some of the organizations and fields connected with his career.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Electric vehicles</h3>
+          <p>Learn how electric cars are changing transportation.</p>
+          <a href="https://www.tesla.com/">Visit Tesla's website</a>
+        </article>
+
+        <article class="card">
+          <h3>Space exploration</h3>
+          <p>Discover rocket development and ambitions for space travel.</p>
+          <a href="https://www.spacex.com/">Visit SpaceX's website</a>
+        </article>
+
+        <article class="card">
+          <h3>Artificial intelligence</h3>
+          <p>Explore AI research, applications and important questions.</p>
+          <a href="https://x.ai/">Visit xAI's website</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2>Explore further</h2>
+      <div class="timeline">
+        <p><strong>Background:</strong> Read about his early life and education.</p>
+        <p><strong>Entrepreneurship:</strong> Explore his business career.</p>
+        <p><strong>Technology:</strong> Learn about innovations and their impact.</p>
+      </div>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Elon_Musk">
+          Read a general biography
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Independent fan project for educational purposes.</p>
+    <p>Not an official website. No endorsement is implied.</p>
+    <p>© <span id="year"></span> EM / TECH Fan Project</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
