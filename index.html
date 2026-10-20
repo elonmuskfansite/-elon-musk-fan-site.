@@ -251,7 +251,14 @@
         transition-duration: 0.01ms !important;
       }
     }
-  </style>
+  </style>.card-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
 </head>
 
 <body>
@@ -332,6 +339,11 @@
         <div class="grid">
           <article class="card">
             <div class="number">01 / TRANSPORT</div>
+            <img
+  class="card-image"
+  src="images/electric-car.jpg"
+  alt="Electric vehicle technology"
+  loading="lazy">
             <h3>Electric vehicles</h3>
             <p>
               Learn about battery-powered cars, charging infrastructure
@@ -345,6 +357,9 @@
 
           <article class="card">
             <div class="number">02 / SPACE</div>
+            <img src="images/space.jpg"
+     alt="Earth and space exploration"
+     class="card-image" loading="lazy">
             <h3>Space exploration</h3>
             <p>
               Discover launch vehicles, reusable rockets, satellites
@@ -358,6 +373,9 @@
 
           <article class="card">
             <div class="number">03 / ARTIFICIAL INTELLIGENCE</div>
+            <img src="images/ai.jpg"
+     alt="Artificial intelligence technology"
+     class="card-image" loading="lazy">
             <h3>Artificial intelligence</h3>
             <p>
               Explore AI systems, emerging applications, research
