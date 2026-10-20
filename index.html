@@ -69,20 +69,21 @@
       padding: 14px 0;
     }
 
-    .brand {
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: 1px;
-      color: var(--text);
-    }
+    ..brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--text);
+}
 
-    .brand span { color: var(--blue); }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.brand img {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
 
     nav a {
       color: var(--muted);
