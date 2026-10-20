@@ -3,210 +3,429 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An independent fan-made educational website about Elon Musk, his career and technology projects.">
-  <title>Elon Musk | Fan & Technology Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="An independent fan-made educational profile exploring Elon Musk, technology, space exploration and electric vehicles.">
+  <title>EM / Tech — Independent Fan Website</title>
 
   <style>
     :root {
       --bg: #080d18;
-      --panel: #111a2b;
-      --text: #f4f7ff;
-      --muted: #aab6cc;
-      --accent: #69a8ff;
+      --surface: #101a2d;
+      --surface2: #14213a;
+      --text: #f5f8ff;
+      --muted: #a7b6cf;
+      --blue: #69a8ff;
+      --border: #243451;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      font: 16px/1.7 system-ui, Arial, sans-serif;
     }
 
-    header {
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #263148;
-    }
-
-    .logo { font-size: 20px; font-weight: bold; }
-
-    nav { display: flex; gap: 16px; flex-wrap: wrap; }
-
-    a { color: var(--accent); text-decoration: none; }
-    nav a { color: var(--text); font-size: 14px; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    .wrap {
+      width: min(var(--max), 90%);
+      margin: auto;
+    }
+
     .notice {
-      background: #19243a;
-      color: #dce7ff;
+      padding: 8px 12px;
       text-align: center;
-      padding: 10px 16px;
-      font-size: 13px;
-    }
-
-    .hero {
-      padding: 90px 7%;
-      text-align: center;
-      background: radial-gradient(ellipse at top, #20365c, var(--bg) 70%);
-    }
-
-    .tag {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      background: #13213a;
+      color: #dce9ff;
       font-size: 12px;
     }
 
-    h1 { font-size: clamp(36px, 8vw, 64px); line-height: 1.15; }
-    h2 { font-size: 30px; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 13, 24, .95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
 
-    .hero p, .section-intro {
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--text);
+    }
+
+    .brand span { color: var(--blue); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
       color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 24px;
+      font-size: 14px;
     }
 
-    .button {
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(ellipse at 75% 10%,
+          #203d6d 0%, transparent 42%),
+        linear-gradient(160deg, #0d172a, var(--bg) 72%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 750;
+      font-size: 12px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 20px 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
       display: inline-block;
-      background: var(--accent);
-      color: #07101f;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: bold;
+      padding: 12px 19px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 700;
     }
 
-    section { padding: 60px 7%; }
-    .section-intro { margin: 0 0 28px; }
+    .btn.primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #07101f;
+    }
+
+    section { padding: 76px 0; }
+
+    .section-head {
+      margin-bottom: 30px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 8px 0;
+    }
+
+    .section-head p {
+      max-width: 650px;
+      color: var(--muted);
+    }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: var(--panel);
-      border: 1px solid #263148;
-      border-radius: 14px;
-      padding: 22px;
+      padding: 26px;
+      background: linear-gradient(145deg,
+        var(--surface2), var(--surface));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: transform .2s, border-color .2s;
     }
 
-    .card h3 { margin-top: 0; }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+    }
+
+    .number {
+      color: var(--blue);
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin: 12px 0 8px;
+    }
+
     .card p { color: var(--muted); }
 
-    .timeline {
-      border-left: 2px solid var(--accent);
-      padding-left: 22px;
-      margin-left: 6px;
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .about-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .about-panel p { color: var(--muted); }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 14px 18px;
+      background: #101a2d;
+      color: var(--muted);
+      border-radius: 0 10px 10px 0;
     }
 
     footer {
-      border-top: 1px solid #263148;
-      padding: 26px 7%;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 13px;
-      text-align: center;
     }
 
-    @media (max-width: 480px) {
-      header { padding: 16px 5%; }
-      nav { gap: 12px; }
-      .hero { padding: 65px 6%; }
-      section { padding: 44px 6%; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 70px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      nav { gap: 13px; }
+      .nav { align-items: flex-start; }
+      h1 { letter-spacing: -1px; }
+      section { padding: 55px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="notice">
-    Independent fan website — not affiliated with or endorsed by Elon Musk.
+    Independent fan website. Not affiliated with or endorsed by Elon Musk.
   </div>
 
   <header>
-    <div class="logo">EM / TECH</div>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#timeline">Timeline</a>
-    </nav>
+    <div class="wrap nav">
+      <a class="brand" href="#home">EM <span>/ TECH</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#fields">Technology</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="tag">People • Innovation • Technology</div>
-      <h1>Exploring the world of Elon Musk</h1>
-      <p>
-        An independent educational profile exploring the career,
-        businesses and technology projects associated with Elon Musk.
-      </p>
-      <a class="button" href="#projects">Explore the projects</a>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Technology • Innovation • Future</div>
+        <h1>Exploring ideas that shape <span>tomorrow.</span></h1>
+        <p>
+          Discover an independent educational profile of Elon Musk,
+          his business career, and the technologies associated with
+          electric vehicles, space exploration and artificial intelligence.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#fields">Explore technology ↗</a>
+          <a class="btn" href="#about">About this website</a>
+        </div>
+      </div>
     </section>
 
     <section id="about">
-      <h2>About Elon Musk</h2>
-      <p class="section-intro">
-        Elon Musk is an entrepreneur associated with electric vehicles,
-        space exploration, artificial intelligence and other technologies.
-        This fan-made website is an introduction for curious readers.
-      </p>
-    </section>
+      <div class="wrap about">
+        <div>
+          <div class="eyebrow">About the project</div>
+          <h2>A closer look at technology and entrepreneurship.</h2>
+          <p style="color:var(--muted)">
+            This independent fan project introduces readers to major
+            technology topics and provides links to further information.
+            It is designed for curious learners and technology enthusiasts.
+          </p>
+        </div>
 
-    <section id="projects">
-      <h2>Areas of technology</h2>
-      <p class="section-intro">
-        Explore some of the organizations and fields connected with his career.
-      </p>
-
-      <div class="grid">
-        <article class="card">
-          <h3>Electric vehicles</h3>
-          <p>Learn how electric cars are changing transportation.</p>
-          <a href="https://www.tesla.com/">Visit Tesla's website</a>
-        </article>
-
-        <article class="card">
-          <h3>Space exploration</h3>
-          <p>Discover rocket development and ambitions for space travel.</p>
-          <a href="https://www.spacex.com/">Visit SpaceX's website</a>
-        </article>
-
-        <article class="card">
-          <h3>Artificial intelligence</h3>
-          <p>Explore AI research, applications and important questions.</p>
-          <a href="https://x.ai/">Visit xAI's website</a>
-        </article>
+        <div class="about-panel">
+          <div class="number">OUR PURPOSE</div>
+          <h3>Learn. Explore. Understand.</h3>
+          <p>
+            Explore the ideas, organizations and developments that
+            influence modern transportation, space technology and AI.
+          </p>
+          <div class="callout">
+            Articles and summaries should be checked against reliable
+            sources and updated when facts change.
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="timeline">
-      <h2>Explore further</h2>
-      <div class="timeline">
-        <p><strong>Background:</strong> Read about his early life and education.</p>
-        <p><strong>Entrepreneurship:</strong> Explore his business career.</p>
-        <p><strong>Technology:</strong> Learn about innovations and their impact.</p>
+    <section id="fields">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Explore the fields</div>
+          <h2>Technology in focus</h2>
+          <p>
+            Start with these three areas to discover more about
+            today's technology landscape.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="number">01 / TRANSPORT</div>
+            <h3>Electric vehicles</h3>
+            <p>
+              Learn about battery-powered cars, charging infrastructure
+              and the transition to electric transportation.
+            </p>
+            <a href="https://www.tesla.com/"
+               target="_blank" rel="noopener noreferrer">
+              Explore Tesla ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="number">02 / SPACE</div>
+            <h3>Space exploration</h3>
+            <p>
+              Discover launch vehicles, reusable rockets, satellites
+              and the engineering behind space missions.
+            </p>
+            <a href="https://www.spacex.com/"
+               target="_blank" rel="noopener noreferrer">
+              Explore SpaceX ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="number">03 / ARTIFICIAL INTELLIGENCE</div>
+            <h3>Artificial intelligence</h3>
+            <p>
+              Explore AI systems, emerging applications, research
+              and the questions surrounding responsible development.
+            </p>
+            <a href="https://x.ai/"
+               target="_blank" rel="noopener noreferrer">
+              Explore xAI ↗
+            </a>
+          </article>
+        </div>
       </div>
-      <p>
-        <a href="https://en.wikipedia.org/wiki/Elon_Musk">
-          Read a general biography
-        </a>
-      </p>
+    </section>
+
+    <section id="resources">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Keep learning</div>
+          <h2>Useful resources</h2>
+          <p>
+            Use these external resources to learn more and compare
+            information from different sources.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="number">RESOURCE 01</div>
+            <h3>Biography</h3>
+            <p>Read a general overview of Elon Musk's life and career.</p>
+            <a href="https://en.wikipedia.org/wiki/Elon_Musk"
+               target="_blank" rel="noopener noreferrer">
+              Read biography ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="number">RESOURCE 02</div>
+            <h3>Space science</h3>
+            <p>Learn about astronomy and scientific discoveries.</p>
+            <a href="https://science.nasa.gov/"
+               target="_blank" rel="noopener noreferrer">
+              Visit NASA Science ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="number">RESOURCE 03</div>
+            <h3>Web development</h3>
+            <p>Learn HTML, CSS and JavaScript to build websites.</p>
+            <a href="https://developer.mozilla.org/"
+               target="_blank" rel="noopener noreferrer">
+              Visit MDN Web Docs ↗
+            </a>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Independent fan project for educational purposes.</p>
-    <p>Not an official website. No endorsement is implied.</p>
-    <p>© <span id="year"></span> EM / TECH Fan Project</p>
+    <div class="wrap footer-inner">
+      <div>
+        <strong>EM / TECH</strong>
+        <p>Independent fan-made educational project.</p>
+      </div>
+      <p>
+        Not an official website. No affiliation or endorsement is implied.
+        <br>
+        © <span id="year"></span> EM / TECH
+      </p>
+    </div>
   </footer>
 
   <script>
@@ -214,4 +433,5 @@
       new Date().getFullYear();
   </script>
 </body>
-</html>
+          </html>
+            
